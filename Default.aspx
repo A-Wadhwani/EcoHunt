@@ -4,6 +4,8 @@
 
     <div class="jumbotron">
     
+        <asp:Label Text="Photo Library" runat="server" Font-Bold="true" Font-Size="XX-Large" />
+
         <div class="row">
             <div class="col-md-3">
                 <asp:Literal runat="server" ID="imgList" />
