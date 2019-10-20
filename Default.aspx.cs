@@ -64,6 +64,7 @@ namespace EcoHunt
             {
                 string url = pictures[x].url;
                 StringBuilder text = new StringBuilder();
+                string redirectUrl = "SuccessfulDeletion.aspx?" + url;
 
                 text.Append("<div class=\"card\">");
                     text.Append("<div class=\"card bg-primary text-white\">");
@@ -74,6 +75,8 @@ namespace EcoHunt
                         text.Append("<a href=\"" + url + "\" >");
                             text.Append("<img width=\"100%\" src=\"" + url + "\" />");
                         text.Append("</a>");
+
+                        text.Append("<button onclick=\"window.location.href='" + redirectUrl + "'; \">Claim Points</button>");
                     text.Append("</div>");
                 text.AppendLine("</div>");
 
