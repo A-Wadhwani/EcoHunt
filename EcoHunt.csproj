@@ -519,6 +519,7 @@
     <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="libman.json" />
     <Content Include="MyProfile.aspx" />
+    <Content Include="SuccessfulDeletion.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -651,6 +652,13 @@
     </Compile>
     <Compile Include="MyProfile.aspx.designer.cs">
       <DependentUpon>MyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessfulDeletion.aspx.cs">
+      <DependentUpon>SuccessfulDeletion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuccessfulDeletion.aspx.designer.cs">
+      <DependentUpon>SuccessfulDeletion.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
