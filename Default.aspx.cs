@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -67,18 +68,25 @@ namespace EcoHunt
             for (int x = 0; x < pictures.Length; x++)
             {
                 string url = pictures[x].url;
-                StringBuilder text = new StringBuilder();
-                string currentUrl = HttpContext.Current.Request.Url.AbsoluteUri;
-                string redirectUrl = currentUrl.Replace("Default", "SuccessfulDeletion.aspx?image=" + url);
+                if (!String.IsNullOrWhiteSpace(pictures[x].url))
+                {
+                    try
+                    {
+                        WebClient wc = new WebClient();
+                        wc.DownloadString(url);
 
-                text.Append("<div class=\"card\">");
-                    text.Append("<div class=\"card bg-primary text-white\">");
+                        StringBuilder text = new StringBuilder();
+                        string currentUrl = HttpContext.Current.Request.Url.AbsoluteUri;
+                        string redirectUrl = currentUrl.Replace("Default", "SuccessfulDeletion.aspx?image=" + url);
+
+                        text.Append("<div class=\"card\">");
+                        text.Append("<div class=\"card bg-primary text-white\">");
                         text.Append("<b>" + "Picture" + "</b>");
-                    text.Append("</div>");
+                        text.Append("</div>");
 
-                    text.Append("<div class=\"card-body\">");
+                        text.Append("<div class=\"card-body\">");
                         text.Append("<a href=\"" + url + "\" >");
-                            text.Append("<img width=\"100%\" src=\"" + url + "\" />");
+                        text.Append("<img width=\"100%\" src=\"" + url + "\" />");
                         text.Append("</a>");
 
                         //text.Append("<form action=\"" + redirectUrl + ">");
@@ -86,13 +94,18 @@ namespace EcoHunt
                         //text.Append("</form>");
                         text.Append("<a href='" + redirectUrl + "'>Claim Points</a>");
                         //text.Append("<button onclick=\"window.location.href='" + "http://google.com" + "'; \">Claim Points</button>");
-                    text.Append("</div>");
-                text.AppendLine("</div>");
+                        text.Append("</div>");
+                        text.AppendLine("</div>");
 
 
-                text.AppendLine("<br />");
+                        text.AppendLine("<br />");
 
-                imgList.Text += text.ToString();
+                        imgList.Text += text.ToString();
+                    }
+                    catch
+                    {
+                    }
+                }
             }
         }
         private void SendThingToTransfer()
