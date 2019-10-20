@@ -65,7 +65,7 @@ namespace EcoHunt
                 string url = pictures[x].url;
                 StringBuilder text = new StringBuilder();
                 string currentUrl = HttpContext.Current.Request.Url.AbsoluteUri;
-                string redirectUrl = currentUrl.Replace("Default", "SuccessfulDeletion.aspx?" + url);
+                string redirectUrl = currentUrl.Replace("Default", "SuccessfulDeletion.aspx?image=" + url);
 
                 text.Append("<div class=\"card\">");
                     text.Append("<div class=\"card bg-primary text-white\">");

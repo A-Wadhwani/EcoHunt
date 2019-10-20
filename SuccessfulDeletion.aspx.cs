@@ -11,7 +11,14 @@ namespace EcoHunt
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String imageUrl = Request.QueryString["image"];
+            string token = Request.QueryString["token"];
 
+            string url = imageUrl + "&token=" + token;
+            url = url.Replace("Pictures/", "Pictures%2F");
+            var thingFromDb = Database.FirebaseDatabase.GetNameFromUrl(url);
+            Database.FirebaseDatabase.DeletePicture(thingFromDb.ID);
+            Database.FirebaseCloudStorage.DeletePhotoFromStorage(thingFromDb.name + ".jpg");
         }
     }
 }

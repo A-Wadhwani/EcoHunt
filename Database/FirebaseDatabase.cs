@@ -44,6 +44,20 @@ namespace EcoHunt.Database
             }
             return null;
         }
+        public static NamesValues GetNameFromUrl(string url)
+        {
+            CheckForConnection();
+            var allNames = GetAllPictureNames();
+
+            for (int x = 0; x < allNames.Length; x++)
+            {
+                if (allNames[x].url == url)
+                {
+                    return allNames[x];
+                }
+            }
+            return null;
+        }
         public static NamesValues GetValuesAssociatedWithGarbagePicture(string name)
         {
             CheckForConnection();
