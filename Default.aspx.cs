@@ -15,6 +15,9 @@ namespace EcoHunt
         private string pathFile = String.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
+            String nameinp = EcoHunt.Cookies.ReadCookie(this.Request, this.Response);
+            if (String.IsNullOrWhiteSpace(nameinp))
+                Response.Redirect("LoginPage.aspx");
             //Database.FirebaseDatabase.AddPicture("First Test");
             //var allNames = Database.FirebaseDatabase.GetAllPictureNames();
             //Database.FirebaseDatabase.DeletePicture("First Test");

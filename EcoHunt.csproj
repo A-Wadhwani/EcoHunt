@@ -520,6 +520,7 @@
     <Content Include="libman.json" />
     <Content Include="MyProfile.aspx" />
     <Content Include="SuccessfulDeletion.aspx" />
+    <None Include="Properties\PublishProfiles\EcoHunt - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

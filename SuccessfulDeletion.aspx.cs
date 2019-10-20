@@ -23,7 +23,6 @@ namespace EcoHunt
             Success.Visible = true;
             SubmitChanges.Visible = false;
             Redirect.Visible = true;
-        }
             String imageUrl = Request.QueryString["image"];
             string token = Request.QueryString["token"];
 
@@ -32,6 +31,8 @@ namespace EcoHunt
             var thingFromDb = Database.FirebaseDatabase.GetNameFromUrl(url);
             Database.FirebaseDatabase.DeletePicture(thingFromDb.ID);
             Database.FirebaseCloudStorage.DeletePhotoFromStorage(thingFromDb.name + ".jpg");
+        }
+
         protected void Redirect_ServerClick(object sender, EventArgs e)
         {
             Response.Redirect("Leaderboard.aspx");
