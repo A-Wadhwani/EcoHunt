@@ -96,6 +96,15 @@ namespace EcoHunt
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword Profile_Password1;
 
         /// <summary>
+        /// logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton logout;
+
+        /// <summary>
         /// SubmitChanges control.
         /// </summary>
         /// <remarks>

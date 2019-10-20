@@ -6,7 +6,7 @@
 <head runat="server">
     <title>Registration</title>
 </head>
-<body>
+<body  style="background-image:url(https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-1.2.1&w=1000&q=80)">
     <div class="row m-5">
         <div class="col-md-3"></div>
         <div class="col-md-6">

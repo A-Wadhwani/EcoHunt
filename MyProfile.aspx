@@ -47,7 +47,10 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 col-md-12 text-right pr-4">
+                            <div class="col-3 col-md-3 text-left pr-4">
+                                <button class="btn btn-dark" id="logout" runat="server" onserverclick="logout_ServerClick" >Logout </button>
+                            </div>
+                            <div class="col-9 col-md-9 text-right pr-4">
                                 <button class="btn btn-dark" id="SubmitChanges" runat="server" onserverclick="SubmitChanges_ServerClick">Submit</button>
                             </div>
                         </div>
