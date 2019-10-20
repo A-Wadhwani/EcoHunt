@@ -11,7 +11,23 @@ namespace EcoHunt
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Success.Visible = false;
+            Redirect.Visible = false;
+        }
 
+        protected void SubmitChanges_ServerClick(object sender, EventArgs e)
+        {
+            
+            String inpName = Cookies.ReadCookie(this.Request, this.Response);
+            Database.FirebaseUsers.AddPoints(inpName, 10);
+            Success.Visible = true;
+            SubmitChanges.Visible = false;
+            Redirect.Visible = true;
+        }
+
+        protected void Redirect_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Leaderboard.aspx");
         }
     }
 }
