@@ -12,9 +12,9 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body bg-light">
-                    <div class="card-header container-fluid bg-dark text-white">
+                    <%--<div class="card-header container-fluid bg-dark text-white">
                         <h2 class="text-center">EcoHunt</h2>
-                    </div>
+                    </div>--%>
                     <form class="form-horizontal" id="login_form" role="form" runat="server">
                         <div class="form-group m-5">
                             <input type="text" class="form-control bg-light" runat="server" id="email" name="email" placeholder="Email ID" value="" required>

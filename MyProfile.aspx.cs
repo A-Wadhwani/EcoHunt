@@ -82,5 +82,9 @@ namespace EcoHunt
             Profile_Password1.Visible = true;
             Email.Attributes.Remove("readonly");
         }
+        protected void logout_ServerClick(object sender, EventArgs e)
+        {
+            Cookies.DeleteCookie(this.Request, this.Response);
+        }
     }
 }
