@@ -64,7 +64,8 @@ namespace EcoHunt
             {
                 string url = pictures[x].url;
                 StringBuilder text = new StringBuilder();
-                string redirectUrl = "SuccessfulDeletion.aspx?" + url;
+                string currentUrl = HttpContext.Current.Request.Url.AbsoluteUri;
+                string redirectUrl = currentUrl.Replace("Default", "SuccessfulDeletion.aspx?" + url);
 
                 text.Append("<div class=\"card\">");
                     text.Append("<div class=\"card bg-primary text-white\">");
@@ -76,7 +77,11 @@ namespace EcoHunt
                             text.Append("<img width=\"100%\" src=\"" + url + "\" />");
                         text.Append("</a>");
 
-                        text.Append("<button onclick=\"window.location.href='" + redirectUrl + "'; \">Claim Points</button>");
+                        //text.Append("<form action=\"" + redirectUrl + ">");
+                        //    text.Append("<input type=\"submit\" value=\"Claim Points\"/>");
+                        //text.Append("</form>");
+                        text.Append("<a href='" + redirectUrl + "'>Claim Points</a>");
+                        //text.Append("<button onclick=\"window.location.href='" + "http://google.com" + "'; \">Claim Points</button>");
                     text.Append("</div>");
                 text.AppendLine("</div>");
 
